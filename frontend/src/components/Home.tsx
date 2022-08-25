@@ -15,17 +15,17 @@ export const Home = () => {
   // };
 
   return (
-     <div className=" flex justify-center items-center flex-col mt-32 ">
-      <div className="   mb-3    w-3/5  h-full ">
+     <div className=" flex  justify-center items-center flex-col sm:mt-32 mt-4 ">
+      <div className="   mb-3 sm:w-3/5 w-full  h-full ">
         <h2 className=" text-[#8e61e9] text-center font-bold mb-8 text-xl">
           Shorta
         </h2>
 
-        <h2 className=" text-[#333333] mb-8 ">
+        <h2 className=" text-[#333333] mb-8 mx-4 ">
           Create an instant shareable short link from your long URL
         </h2>
 
-        <form action="POST" className=" flex flex-col">
+        <form action="POST" className=" flex mx-4  flex-col">
           <input
             type="url"
             name="url"
@@ -39,7 +39,7 @@ export const Home = () => {
           <div className="justify-center flex flex-row">
             <button
               type="submit"
-              className=" bg-blend-lighten w-1/5 bg-[#ff5aa6] rounded-sm mb-8 h-12 font-semibold py-1.5 text-white   "
+              className=" bg-blend-lighten sm:w-1/5 w-28 bg-[#ff5aa6] rounded-sm mb-8   font-semibold py-1.5 text-white   "
             >
               Create Short Link
             </button>
