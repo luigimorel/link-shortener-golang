@@ -3,9 +3,15 @@ module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {
-      colors: { "gray-primary": "#828282" },
+      fontFamily: {
+        "pacifico": ["Pacifico", "sans-serif"]
+      },
+      colors: {
+        "gray-primary": "#828282",
+        "purple-primary": "#6c63ff",
+      },
       textColor: {
-        "blue-primary": "#2D9CDB",
+        "purple-primary": "#6c63ff",
         "gray-primary": "#828282",
       },
       height: {
