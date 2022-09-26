@@ -6,13 +6,13 @@ import (
 	"os"
 
 	"github.com/joho/godotenv"
+	"github.com/morelmiles/link-shortener/src/models"
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
 )
 
 var (
-	DB  *gorm.DB
-	err error
+	DB *gorm.DB
 )
 
 func Config() {
@@ -37,6 +37,8 @@ func Config() {
 		fmt.Println("Connected to the database!")
 	}
 
-	// DB.Debug().AutoMigrate(&models.User{})
-
+	DB.Debug().AutoMigrate(&models.Link{})
+	if err != nil {
+		fmt.Println(err)
+	}
 }
