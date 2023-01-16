@@ -18,7 +18,8 @@ export const Newsletter = () => {
             Whether article spirits new her covered hastily sitting her. Let us
             keep you in sync with what is happening at Linkie.
           </p>
-          <div className="flex items-stretch mt-12">
+
+          <form action="flex items-stretch mt-12">
             <input
               className="bg-gray-100 rounded-lg rounded-r-none text-base leading-none text-gray-800 p-5 w-4/5 border border-transparent focus:outline-none focus:border-gray-500"
               type="email"
@@ -27,7 +28,7 @@ export const Newsletter = () => {
             <button className="w-32 rounded-l-none hover:bg-indigo-600 bg-indigo-700 rounded text-base font-medium leading-none text-white p-5 uppercase focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700">
               subscribe
             </button>
-          </div>
+          </form>
         </div>
       </div>
     </>

@@ -34,18 +34,18 @@ cd api
 ```
 
 2 Connect to a database
-**I'm using the Postgres v14 Docker image**
 
-```sh
-docker exec -it postgres bash        # open postgres shell in interactive and detached mode
+- Install PostgreSQL with docker
+  ```
+  docker run --name postgres -e POSTGRES_HOST_AUTH_METHOD=trust -v pgdata:/var/lib/postgresql/data -p 5432:5432 -d postgres/postgres:latest
+  ```
+- Create the database
 
-su - postgres           # NOTE: this is a sudo role. You can alternatively create a role
-
-psql             #create a postgres shell session
-
-create database database_name;      # give a name to your local database
-
-```
+  ```sh
+  docker exec -it postgres psql -U postgres
+  postgres=# create database database_name;      # give a name to your local database
+   postgres=#
+  ```
 
 3 Install the project libraries
 

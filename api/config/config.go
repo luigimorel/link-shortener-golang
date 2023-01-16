@@ -6,7 +6,7 @@ import (
 	"os"
 
 	"github.com/joho/godotenv"
-	"github.com/morelmiles/link-shortener/src/models"
+	"github.com/morelmiles/link-shortener/models"
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
 )

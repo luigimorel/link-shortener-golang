@@ -8,9 +8,9 @@ import (
 	"net/http"
 
 	"github.com/gorilla/mux"
-	"github.com/morelmiles/link-shortener/src/config"
-	"github.com/morelmiles/link-shortener/src/models"
-	"github.com/morelmiles/link-shortener/src/utils"
+	"github.com/morelmiles/link-shortener/config"
+	"github.com/morelmiles/link-shortener/models"
+	"github.com/morelmiles/link-shortener/utils"
 	"gorm.io/gorm"
 )
 
@@ -51,15 +51,17 @@ func checkIfLinkExists(linkId string) bool {
 
 // CreateLink - Creates a new link
 func CreateLink(w http.ResponseWriter, r *http.Request) {
-	var link models.Link
-	var err error
+	link := models.Link{}
+
+	mainURL := "http://localhost:8080/"
 
 	json.NewDecoder(r.Body).Decode(&link)
 
-	link.RandomString = utils.RandomString(8)
+	link.ShortUrl = utils.RandomString(8)
+	link.ShortUrl = mainURL + link.ShortUrl
 
 	newLink := config.DB.Create(&link)
-	err = newLink.Error
+	err := newLink.Error
 
 	if err != nil {
 		log.Panic(err)
@@ -123,7 +125,7 @@ func RedirectLinks(w http.ResponseWriter, r *http.Request) {
 	}
 
 	// figure out how to log out a response
-	http.Redirect(w, r, link.ShortLink, http.StatusSeeOther)
+	http.Redirect(w, r, link.ShortUrl, http.StatusSeeOther)
 }
 
 func returnNotFound(writer http.ResponseWriter) {
